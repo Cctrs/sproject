@@ -38,3 +38,15 @@
 #### HEAD  
 Служебный файл в папе .git.  
 Указывает на коммит, который сделан последним. Внутри HEAD ссылка на файл, в файле хэш последнего коммита.  
+
+
+#### Схема статусов файлов в Git
+```mermaid
+flowchart TD
+    A[Untracked] -->|git add| B(tracked + staged)
+    B -->|git commit| C{tracked, ready to push}
+    C -->|Modify| D[tracked modified]
+    D -->|git add| B
+    C -->|git push| E[delivered]
+```
+
